@@ -18,6 +18,7 @@ int main(int argc, char *argv[]) {
 
   int id = 1;
   int sum_works = 0;
+  int sum_power = 0;
   std::string line;
 
   while (std::getline(input_file, line)) {
@@ -42,22 +43,31 @@ int main(int argc, char *argv[]) {
       }
     }
 
-    bool works = true;
-    for (auto const& [key, item] : need) {
-      if (max_colors.contains(key) && max_colors[key] > item) {
-        works = false;
-        break;
-      }
+    // Part 1
+    // bool works = true;
+    // for (auto const& [key, item] : need) {
+    //   if (max_colors.contains(key) && max_colors[key] > item) {
+    //     works = false;
+    //     break;
+    //   }
+    // }
+    //
+    // if (works) {
+    //   sum_works += id;
+    // }
+    
+    int power = 1;
+    for (auto const& [key, item] : max_colors) {
+      power *= item;
     }
 
-    if (works) {
-      sum_works += id;
-    }
+    sum_power += power;
 
     id++;
   }
 
-  std::cout << sum_works << std::endl;
+  // std::cout << sum_works << std::endl;
+  std::cout << sum_power << std::endl;
 
   return 0;
 }

@@ -12,4 +12,5 @@ add_executable(1 1.cpp)
 add_executable(2 2.cpp)
 add_executable(3-1 3-1.cpp)
 add_executable(3-2 3-2.cpp)
-
+add_executable(4-1 4-1.cpp)
+add_executable(4-2 4-2.cpp)
